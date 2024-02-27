@@ -915,6 +915,14 @@ a,
     padding-bottom: 5rem;
   }
 
+  .md\:pr-20 {
+    padding-right: 5rem;
+  }
+
+  .md\:pr-5 {
+    padding-right: 1.25rem;
+  }
+
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -929,5 +937,15 @@ a,
 
   .lg\:pb-28 {
     padding-bottom: 7rem;
+  }
+
+  .lg\:pr-10 {
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:pr-20 {
+    padding-right: 5rem;
   }
 }
