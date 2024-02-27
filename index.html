@@ -62,9 +62,11 @@
                <div class="sl-container">
                     <div class="swiper slider">
                          <div class="swiper-wrapper">
-                              <div class="swiper-slide"><img src="assets/img/IMG_0664.jpg" alt=""></div>
-                              <div class="swiper-slide"><img src="assets/img/IMG_0665.jpg" alt=""></div>
-                              <div class="swiper-slide"><img src="assets/img/IMG_0666.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/img/image3.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/img/image4.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/img/image5.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/img/image6.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/img/image7.jpg" alt=""></div>
                          </div>
                     </div>
                </div>
@@ -74,13 +76,15 @@
           <!-- INTRODUCTION -->
           <section class="lg:pb-28 md:pb-20 pb-9">
                <div class="sl-container">
-                    <div class="flex flex-wrap items-end">
-                         <div class="w-2/5 sm:px-2">
-                              <img class="max-w-96" src="assets/img/IMG_0653.jpg" alt="">
+                    <div class="flex flex-wrap items-center">
+                         <div class="sm:w-1/2 sm:px-2 sm:pr-20">
+                              <video autoplay>
+                                   <source src="assets/video/3268705063528303961.mp4" type="video/mp4">
+                                   Your browser does not support the video tag.
+                              </video>
                          </div>
-                         <div class="w-3/5 sm:px-2" x-data="{checked: 'fn'}">
-                              <div class="flex items-center justify-between">
-                                   <h2 class="font-bold md:text-3xl text-xl mb-4 tracking-wider text-lime-400">RazakAllah EA</h2>
+                         <div class="sm:w-1/2 sm:px-2" x-data="{checked: 'fn'}">
+                              <div class="flex items-center gap-4 mb-4">
                                    <div class="group relative w-12">
                                         <button class="flex items-center justify-end w-full gap-1 text-xs">
                                              <i class="fa-solid fa-angle-down"></i>
@@ -89,7 +93,7 @@
                                              <img :class="checked == 'ae' ? 'block': 'hidden'" class="w-fit" src="assets/img/flag/ae.png" alt="">
                                         </button>
                                         <ul
-                                             class="absolute top-full right-0 py-2 w-full bg-black/15 mt-1 rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out">
+                                             class="absolute top-full right-0 py-2 w-full bg-black/80 mt-1 rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out">
                                              <li @click="checked = 'fn'" :class="checked == 'fn' ? 'bg-lime-400': ''" class="py-1 px-4 cursor-pointer block hover:bg-lime-400/25"><img
                                                        src="assets/img/flag/fr.png" alt=""></li>
                                              <li @click="checked = 'en'" :class="checked == 'en' ? 'bg-lime-400': ''" class="py-1 px-4 cursor-pointer block hover:bg-lime-400/25"><img
@@ -98,8 +102,55 @@
                                                        src="assets/img/flag/ae.png" alt=""></li>
                                         </ul>
                                    </div>
+                                   <h2 class="font-bold md:text-3xl text-xl tracking-wider text-lime-400">ChironTrend</h2>
                               </div>
-                              <div>
+                              <div class="overflow-hidden">
+                                   <p :class="checked == 'fn' ? 'opacity-100 visible h-fit': 'opacity-0 invisible h-0'" class="space-y-2 transition-all duration-300 ease-out">Si la bougie actuelle
+                                        casse la ligne de ChironTrend donc elle cloture au dessus de chironnael et que la nouvelle bougie qui doit donner le signal son ouverture soit aussi au dessus
+                                        de chironnael pour l'achat et l'inverse pour la vente!
+                                        <br>
+                                        Discover our new indicator,ChironTrend ! It’s a powerful tool that appears as a green line on your chart. Designed for traders and investors, ChironNael uses
+                                        advanced algorithms to help you navigate the financial markets. ChironTrend is designed to adapt to changing market conditions, thus offering unparalleled
+                                        flexibility. Whether you are a beginner or experienced trader, ChironNael can help you make more informed trading decisions. Don’t wait any longer, add the
+                                        ChironNael indicator to your trading platform today and discover the difference a superior quality indicator can make in your trading !
+                                        Découvrez notre nouvel indicateur, ChironNael! C’est un outil puissant qui se présente sous la forme d’une ligne verte sur votre graphique. Conçu pour les
+                                        traders et les investisseurs, ChironTrend utilise des algorithmes avancés pour vous aider à naviguer sur les marchés financiers.
+                                        ChironTrend est conçu pour s’adapter aux conditions changeantes du marché, offrant ainsi une flexibilité inégalée. Que vous soyez un trader débutant ou
+                                        expérimenté, ChironTrend peut vous aider à prendre des décisions de trading plus éclairées.
+                                        N’attendez plus, ajoutez l’indicateur ChironTrend à votre plateforme de trading dès aujourd’hui et découvrez la différence qu’un indicateur de qualité
+                                        supérieure peut faire dans votre trading!
+                                   </p>
+                                   <p :class="checked == 'en' ? 'opacity-100 visible h-fit': 'opacity-0 invisible h-0'" class="space-y-2 transition-all duration-300 ease-out">if the current candle
+                                        breaks the ChironTrend line then it closes above chironnael and the new candle which should give the signal its opening is also above chironnael for buying and
+                                        the opposite for selling!
+                                        <br>
+                                        Discover our new indicator, ChironTrend! It’s a powerful tool that appears as a green line on your chart. Designed for traders and investors, ChironNael uses
+                                        advanced algorithms to help you navigate the financial markets. ChironTrend is designed to adapt to changing market conditions, thus offering unparalleled
+                                        flexibility. Whether you are a beginner or experienced trader, ChironNael can help you make more informed trading decisions. Don’t wait any longer, add the
+                                        ChironNael indicator to your trading platform today and discover the difference a superior quality indicator can make in your trading!
+                                        Discover our new indicator, ChironNael! This is a powerful tool that appears as a green line on your chart. Designed for traders and investors, ChironTrend uses
+                                        advanced algorithms to help you navigate the financial markets.
+                                        ChironTrend is designed to adapt to changing market conditions, providing unparalleled flexibility. Whether you are a beginner or an experienced trader,
+                                        ChironTrend can help you make more informed trading decisions.
+                                        Don't wait any longer, add the ChironTrend indicator to your trading platform today and discover the difference a top quality indicator can make in your
+                                        trading!
+                                   </p>
+                                   <p :class="checked == 'ae' ? 'opacity-100 visible h-fit': 'opacity-0 invisible h-0'" class="space-y-2 transition-all duration-300 ease-out">
+                                        إذا كسرت الشمعة الحالية خط ChironTrend فإنها تغلق فوق chironnael والشمعة الجديدة التي ينبغي أن تعطي الإشارة افتتاحها يكون أيضًا فوق chironnael للشراء والعكس
+                                        للبيع!
+                                        <br>
+                                        اكتشف مؤشرنا الجديد، ChironTrend! إنها أداة قوية تظهر كخط أخضر على الرسم البياني الخاص بك. مصممة للمتداولين والمستثمرين، تستخدم ChironNael خوارزميات متقدمة
+                                        لمساعدتك على التنقل في الأسواق المالية. تم تصميم ChironTrend للتكيف مع ظروف السوق المتغيرة، وبالتالي توفير مرونة لا مثيل لها. سواء كنت متداولًا مبتدئًا أو
+                                        متمرسًا، يمكن لـ ChironNael مساعدتك على اتخاذ قرارات تداول أكثر استنارة. لا تنتظر أكثر من ذلك، أضف مؤشر ChironNael إلى منصة التداول الخاصة بك اليوم واكتشف الفرق
+                                        الذي يمكن أن يحدثه مؤشر الجودة الفائقة في تداولك!
+                                        اكتشف مؤشرنا الجديد، ChironNael! هذه أداة قوية تظهر كخط أخضر على الرسم البياني الخاص بك. يستخدم ChironTrend المصمم للمتداولين والمستثمرين، خوارزميات متقدمة
+                                        لمساعدتك على التنقل في الأسواق المالية.
+                                        تم تصميم ChironTrend للتكيف مع ظروف السوق المتغيرة، مما يوفر مرونة لا مثيل لها. سواء كنت مبتدئًا أو متداولًا ذا خبرة، يمكن أن يساعدك ChironTrend على اتخاذ
+                                        قرارات تداول أكثر استنارة.
+                                        لا تنتظر أكثر من ذلك، أضف مؤشر ChironTrend إلى منصة التداول الخاصة بك اليوم واكتشف الفرق الذي يمكن أن يحدثه مؤشر عالي الجودة في تداولك!
+                                   </p>
+                              </div>
+                              <!-- <div>
                                    <div :class="checked == 'fn' ? 'opacity-100 visible h-fit': 'opacity-0 invisible h-0'" class="space-y-2 transition-all duration-300 ease-out">
                                         <p>RazakAllah EA est un Expert Advisor innovant qui utilise une stratégie de trading basée sur I'indicateur personnalisé “ChironNael". Il est congu pour maximiser
                                              vos
@@ -149,7 +200,7 @@
                                         <p><span class="font-semibold">وظيفة cldure لجميع الأوامر:</span> أخيرًا ، تم تجهيز Razakallah EA بوظيفة تغلق جميع المواضع المفتوحة للرمز الحالي.</p>
                                         <p>مع Razakallah EA ، يمكنك التداول بثقة ، مع العلم أن لديك أداة قوية ومرنة تحت تصرفك لمساعدتك في التنقل في الأسواق المالية.</p>
                                    </div>
-                              </div>
+                              </div> -->
                          </div>
                     </div>
                </div>
@@ -163,7 +214,7 @@
      <script>
           var swiper = new Swiper(".slider", {
                autoplay: {
-                    delay: 2500,
+                    delay: 3000,
                     disableOnInteraction: false,
                },
                loop: true,
