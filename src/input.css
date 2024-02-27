@@ -10,7 +10,7 @@
 
 @layer base {
   body {
-    @apply bg-slate-950 text-white text-sm;
+    @apply bg-blue-950 text-white;
   }
 
   section {
