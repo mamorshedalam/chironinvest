@@ -23,93 +23,92 @@
      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body x-data="{sidebar : false}">
+<body x-data="{sidebar : false, checked: 'fn'}">
 
      <!-- HEADER -->
      <header class="bg-black/10">
           <div class="sl-container">
-               <div class="flex flex-wrap">
+               <div class="flex flex-wrap justify-between items-center">
                     <div class="max-w-28 w-1/2 my-4"><a href="index.html"><img src="assets/img/logo.png" alt="logo"></a></div>
+                    <div class="group relative w-12">
+                         <button class="flex items-center justify-end w-full gap-1 text-xs">
+                              <i class="fa-solid fa-angle-down"></i>
+                              <img :class="checked == 'fn' ? 'block': 'hidden'" class="w-6 ml-2" src="assets/img/flag/fr.png" alt="">
+                              <img :class="checked == 'en' ? 'block': 'hidden'" class="w-6 ml-2" src="assets/img/flag/en.png" alt="">
+                              <img :class="checked == 'ae' ? 'block': 'hidden'" class="w-6 ml-2" src="assets/img/flag/ae.png" alt="">
+                         </button>
+                         <ul
+                              class="absolute top-full right-0 py-2 w-full bg-black/80 mt-1 rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out">
+                              <li @click="checked = 'fn'" :class="checked == 'fn' ? 'bg-lime-400': ''" class="py-1 px-4 cursor-pointer block hover:bg-lime-400/25"><img src="assets/img/flag/fr.png"
+                                        alt=""></li>
+                              <li @click="checked = 'en'" :class="checked == 'en' ? 'bg-lime-400': ''" class="py-1 px-4 cursor-pointer block hover:bg-lime-400/25"><img src="assets/img/flag/en.png"
+                                        alt=""></li>
+                              <li @click="checked = 'ae'" :class="checked == 'ae' ? 'bg-lime-400': ''" class="py-1 px-4 cursor-pointer block hover:bg-lime-400/25"><img src="assets/img/flag/ae.png"
+                                        alt=""></li>
+                         </ul>
+                    </div>
                </div>
           </div>
      </header>
      <!-- HEADER -->
 
      <!-- MAIN -->
-     <main>
-          <!-- HERO -->
-          <section class="lg:py-32 md:py-20 py-10">
-               <div class="sl-container">
-                    <div class="flex flex-wrap items-center">
-                         <div class="md:w-1/2 md:px-4 sm:px-2">
-                              <h1 class="font-bold text-6xl">Nous fournissons les <span class="text-lime-400 block pt-2.5">meilleurs services</span> </h1>
-                              <ul class="font-semibold space-y-2 my-6">
-                                   <li><i class="fa-sharp fa-solid fa-check" aria-hidden="true"></i> Faites travailler votre argent intelligemment</li>
-                                   <li><i class="fa-sharp fa-solid fa-check" aria-hidden="true"></i> Automatisez votre trading</li>
-                                   <li><i class="fa-sharp fa-solid fa-check" aria-hidden="true"></i> Fructifiez votre capital</li>
-                              </ul>
-                         </div>
-                         <div class="md:w-1/2 md:px-4 sm:px-2">
-                              <img class="max-w-96 ml-auto" src="assets/img/IMG_0654.png" alt="">
-                         </div>
-                    </div>
-               </div>
-          </section>
-          <!-- HERO -->
-
-          <!-- SLIDER -->
-          <section class="lg:pb-28 md:pb-20 pb-9">
-               <div class="sl-container">
-                    <div class="swiper slider">
-                         <div class="swiper-wrapper">
-                              <div class="swiper-slide"><img src="assets/img/image3.jpg" alt=""></div>
-                              <div class="swiper-slide"><img src="assets/img/image4.jpg" alt=""></div>
-                              <div class="swiper-slide"><img src="assets/img/image5.jpg" alt=""></div>
-                              <div class="swiper-slide"><img src="assets/img/image6.jpg" alt=""></div>
-                              <div class="swiper-slide"><img src="assets/img/image7.jpg" alt=""></div>
-                         </div>
-                    </div>
-               </div>
-          </section>
-          <!-- SLIDER -->
-
-          <!-- INTRODUCTION -->
-          <section class="lg:pb-28 md:pb-20 pb-9">
-               <div class="sl-container">
-                    <div class="flex flex-wrap items-center">
-                         <div class="md:w-1/2 sm:px-2 xl:pr-20 lg:pr-10 md:pr-5">
-                              <video autoplay>
-                                   <source src="assets/video/3268705063528303961.mp4" type="video/mp4">
-                                   Your browser does not support the video tag.
-                              </video>
-                         </div>
-                         <div class="md:w-1/2 sm:px-2" x-data="{checked: 'fn'}">
-                              <div class="flex items-center gap-4 mb-4">
-                                   <div class="group relative w-12">
-                                        <button class="flex items-center justify-end w-full gap-1 text-xs">
-                                             <i class="fa-solid fa-angle-down"></i>
-                                             <img :class="checked == 'fn' ? 'block': 'hidden'" class="w-fit" src="assets/img/flag/fr.png" alt="">
-                                             <img :class="checked == 'en' ? 'block': 'hidden'" class="w-fit" src="assets/img/flag/en.png" alt="">
-                                             <img :class="checked == 'ae' ? 'block': 'hidden'" class="w-fit" src="assets/img/flag/ae.png" alt="">
-                                        </button>
-                                        <ul
-                                             class="absolute top-full right-0 py-2 w-full bg-black/80 mt-1 rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out">
-                                             <li @click="checked = 'fn'" :class="checked == 'fn' ? 'bg-lime-400': ''" class="py-1 px-4 cursor-pointer block hover:bg-lime-400/25"><img
-                                                       src="assets/img/flag/fr.png" alt=""></li>
-                                             <li @click="checked = 'en'" :class="checked == 'en' ? 'bg-lime-400': ''" class="py-1 px-4 cursor-pointer block hover:bg-lime-400/25"><img
-                                                       src="assets/img/flag/en.png" alt=""></li>
-                                             <li @click="checked = 'ae'" :class="checked == 'ae' ? 'bg-lime-400': ''" class="py-1 px-4 cursor-pointer block hover:bg-lime-400/25"><img
-                                                       src="assets/img/flag/ae.png" alt=""></li>
-                                        </ul>
-                                   </div>
-                                   <h2 class="font-bold md:text-3xl text-xl tracking-wider text-lime-400">ChironTrend</h2>
+     <main class="overflow-hidden">
+          <div :class="checked == 'fn' ? 'opacity-100 visible h-fit': 'opacity-0 invisible h-0'" class="space-y-2 transition-all duration-300 ease-out">
+               <!-- HERO -->
+               <section class="lg:py-32 md:py-20 py-10">
+                    <div class="sl-container">
+                         <div class="flex flex-wrap items-center">
+                              <div class="md:w-1/2 md:px-4 sm:px-2">
+                                   <h1 class="font-bold text-6xl">Nous fournissons les <span class="text-lime-400 block pt-2.5">meilleurs services</span> </h1>
+                                   <ul class="font-semibold space-y-2 my-6">
+                                        <li><i class="fa-sharp fa-solid fa-check" aria-hidden="true"></i> Faites travailler votre argent intelligemment</li>
+                                        <li><i class="fa-sharp fa-solid fa-check" aria-hidden="true"></i> Automatisez votre trading</li>
+                                        <li><i class="fa-sharp fa-solid fa-check" aria-hidden="true"></i> Fructifiez votre capital</li>
+                                   </ul>
                               </div>
-                              <div class="overflow-hidden">
-                                   <p :class="checked == 'fn' ? 'opacity-100 visible h-fit': 'opacity-0 invisible h-0'" class="space-y-2 transition-all duration-300 ease-out">Si la bougie actuelle
-                                        casse la ligne de ChironTrend donc elle cloture au dessus de chironnael et que la nouvelle bougie qui doit donner le signal son ouverture soit aussi au dessus
+                              <div class="md:w-1/2 md:px-4 sm:px-2">
+                                   <img class="max-w-96 ml-auto" src="assets/img/IMG_0654.png" alt="">
+                              </div>
+                         </div>
+                    </div>
+               </section>
+               <!-- HERO -->
+               <!-- SLIDER -->
+               <section class="lg:pb-28 md:pb-20 pb-9">
+                    <div class="sl-container">
+                         <div class="swiper slider">
+                              <div class="swiper-wrapper">
+                                   <div class="swiper-slide"><img src="assets/img/image3.jpg" alt=""></div>
+                                   <div class="swiper-slide"><img src="assets/img/image4.jpg" alt=""></div>
+                                   <div class="swiper-slide"><img src="assets/img/image5.jpg" alt=""></div>
+                                   <div class="swiper-slide"><img src="assets/img/image6.jpg" alt=""></div>
+                                   <div class="swiper-slide"><img src="assets/img/image7.jpg" alt=""></div>
+                              </div>
+                         </div>
+                    </div>
+               </section>
+               <!-- SLIDER -->
+               <!-- INTRODUCTION -->
+               <section class="lg:pb-28 md:pb-20 pb-9">
+                    <div class="sl-container">
+                         <div class="flex flex-wrap items-center">
+                              <div class="md:w-1/2 sm:px-2 xl:pr-20 lg:pr-10 md:pr-5">
+                                   <video autoplay>
+                                        <source src="assets/video/3268705063528303961.mp4" type="video/mp4">
+                                        Votre navigateur ne prend pas en charge la balise vidéo.
+                                   </video>
+                              </div>
+                              <div class="md:w-1/2 sm:px-2">
+                                   <h2 class="font-bold md:text-3xl text-xl tracking-wider text-lime-400 mb-2">ChironTrend</h2>
+                                   <p class="relative bg-no-repeat bg-center bg-cover py-2 px-4 z-10 before:absolute before:inset-0 before:w-full before:h-full before:bg-black/70 before:-z-10" style="background-image: url(assets/img/IMG_0656.jpg);">Si la bougie
+                                        actuelle
+                                        casse la ligne de ChironTrend donc elle cloture au dessus de chironnael et que la nouvelle bougie qui doit donner le signal son ouverture soit aussi au
+                                        dessus
                                         de chironnael pour l'achat et l'inverse pour la vente!
                                         <br>
-                                        Discover our new indicator,ChironTrend ! It’s a powerful tool that appears as a green line on your chart. Designed for traders and investors, ChironNael uses
+                                        Discover our new indicator,ChironTrend ! It’s a powerful tool that appears as a green line on your chart. Designed for traders and investors, ChironNael
+                                        uses
                                         advanced algorithms to help you navigate the financial markets. ChironTrend is designed to adapt to changing market conditions, thus offering unparalleled
                                         flexibility. Whether you are a beginner or experienced trader, ChironNael can help you make more informed trading decisions. Don’t wait any longer, add the
                                         ChironNael indicator to your trading platform today and discover the difference a superior quality indicator can make in your trading !
@@ -120,92 +119,151 @@
                                         N’attendez plus, ajoutez l’indicateur ChironTrend à votre plateforme de trading dès aujourd’hui et découvrez la différence qu’un indicateur de qualité
                                         supérieure peut faire dans votre trading!
                                    </p>
-                                   <p :class="checked == 'en' ? 'opacity-100 visible h-fit': 'opacity-0 invisible h-0'" class="space-y-2 transition-all duration-300 ease-out">if the current candle
-                                        breaks the ChironTrend line then it closes above chironnael and the new candle which should give the signal its opening is also above chironnael for buying and
+                              </div>
+                         </div>
+                    </div>
+               </section>
+               <!-- INTRODUCTION -->
+          </div>
+          <div :class="checked == 'en' ? 'opacity-100 visible h-fit': 'opacity-0 invisible h-0'" class="space-y-2 transition-all duration-300 ease-out">
+               <!-- HERO -->
+               <section class="lg:py-32 md:py-20 py-10">
+                    <div class="sl-container">
+                         <div class="flex flex-wrap items-center">
+                              <div class="md:w-1/2 md:px-4 sm:px-2">
+                                   <h1 class="font-bold text-6xl">We provide the <span class="text-lime-400 block pt-2.5">best services</span> </h1>
+                                   <ul class="font-semibold space-y-2 my-6">
+                                        <li><i class="fa-sharp fa-solid fa-check" aria-hidden="true"></i> Make your money work smart</li>
+                                        <li><i class="fa-sharp fa-solid fa-check" aria-hidden="true"></i> Automate your trading</li>
+                                        <li><i class="fa-sharp fa-solid fa-check" aria-hidden="true"></i> Profit from your capital</li>
+                                   </ul>
+                              </div>
+                              <div class="md:w-1/2 md:px-4 sm:px-2">
+                                   <img class="max-w-96 ml-auto" src="assets/img/IMG_0654.png" alt="">
+                              </div>
+                         </div>
+                    </div>
+               </section>
+               <!-- HERO -->
+               <!-- SLIDER -->
+               <section class="lg:pb-28 md:pb-20 pb-9">
+                    <div class="sl-container">
+                         <div class="swiper slider">
+                              <div class="swiper-wrapper">
+                                   <div class="swiper-slide"><img src="assets/img/image3.jpg" alt=""></div>
+                                   <div class="swiper-slide"><img src="assets/img/image4.jpg" alt=""></div>
+                                   <div class="swiper-slide"><img src="assets/img/image5.jpg" alt=""></div>
+                                   <div class="swiper-slide"><img src="assets/img/image6.jpg" alt=""></div>
+                                   <div class="swiper-slide"><img src="assets/img/image7.jpg" alt=""></div>
+                              </div>
+                         </div>
+                    </div>
+               </section>
+               <!-- SLIDER -->
+               <!-- INTRODUCTION -->
+               <section class="lg:pb-28 md:pb-20 pb-9">
+                    <div class="sl-container">
+                         <div class="flex flex-wrap items-center">
+                              <div class="md:w-1/2 sm:px-2 xl:pr-20 lg:pr-10 md:pr-5">
+                                   <video autoplay>
+                                        <source src="assets/video/3268705063528303961.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                   </video>
+                              </div>
+                              <div class="md:w-1/2 sm:px-2">
+                                   <h2 class="font-bold md:text-3xl text-xl tracking-wider text-lime-400 mb-4">ChironTrend</h2>
+                                   <p class="relative bg-no-repeat bg-center bg-cover py-2 px-4 z-10 before:absolute before:inset-0 before:w-full before:h-full before:bg-black/70 before:-z-10" style="background-image: url(assets/img/IMG_0656.jpg);">if the current
+                                        candle
+                                        breaks the ChironTrend line then it closes above chironnael and the new candle which should give the signal its opening is also above chironnael for buying
+                                        and
                                         the opposite for selling!
                                         <br>
-                                        Discover our new indicator, ChironTrend! It’s a powerful tool that appears as a green line on your chart. Designed for traders and investors, ChironNael uses
+                                        Discover our new indicator, ChironTrend! It’s a powerful tool that appears as a green line on your chart. Designed for traders and investors, ChironNael
+                                        uses
                                         advanced algorithms to help you navigate the financial markets. ChironTrend is designed to adapt to changing market conditions, thus offering unparalleled
                                         flexibility. Whether you are a beginner or experienced trader, ChironNael can help you make more informed trading decisions. Don’t wait any longer, add the
                                         ChironNael indicator to your trading platform today and discover the difference a superior quality indicator can make in your trading!
-                                        Discover our new indicator, ChironNael! This is a powerful tool that appears as a green line on your chart. Designed for traders and investors, ChironTrend uses
+                                        Discover our new indicator, ChironNael! This is a powerful tool that appears as a green line on your chart. Designed for traders and investors, ChironTrend
+                                        uses
                                         advanced algorithms to help you navigate the financial markets.
                                         ChironTrend is designed to adapt to changing market conditions, providing unparalleled flexibility. Whether you are a beginner or an experienced trader,
                                         ChironTrend can help you make more informed trading decisions.
                                         Don't wait any longer, add the ChironTrend indicator to your trading platform today and discover the difference a top quality indicator can make in your
                                         trading!
                                    </p>
-                                   <p :class="checked == 'ae' ? 'opacity-100 visible h-fit': 'opacity-0 invisible h-0'" class="space-y-2 transition-all duration-300 ease-out">
-                                        إذا كسرت الشمعة الحالية خط ChironTrend فإنها تغلق فوق chironnael والشمعة الجديدة التي ينبغي أن تعطي الإشارة افتتاحها يكون أيضًا فوق chironnael للشراء والعكس
+                              </div>
+                         </div>
+                    </div>
+               </section>
+               <!-- INTRODUCTION -->
+          </div>
+          <div :class="checked == 'ae' ? 'opacity-100 visible h-fit': 'opacity-0 invisible h-0'" class="space-y-2 transition-all duration-300 ease-out">
+               <!-- HERO -->
+               <section class="lg:py-32 md:py-20 py-10">
+                    <div class="sl-container">
+                         <div class="flex flex-wrap items-center">
+                              <div class="md:w-1/2 md:px-4 sm:px-2">
+                                   <h1 class="font-bold text-6xl">نحن نقدم <span class="text-lime-400 block pt-2.5">أفضل الخدمات</span> </h1>
+                                   <ul class="font-semibold space-y-2 my-6">
+                                        <li><i class="fa-sharp fa-solid fa-check" aria-hidden="true"></i> اجعل أموالك تعمل بذكاء</li>
+                                        <li><i class="fa-sharp fa-solid fa-check" aria-hidden="true"></i> أتمتة التداول الخاص بك</li>
+                                        <li><i class="fa-sharp fa-solid fa-check" aria-hidden="true"></i> الربح من رأس المال الخاص بك</li>
+                                   </ul>
+                              </div>
+                              <div class="md:w-1/2 md:px-4 sm:px-2">
+                                   <img class="max-w-96 ml-auto" src="assets/img/IMG_0654.png" alt="">
+                              </div>
+                         </div>
+                    </div>
+               </section>
+               <!-- HERO -->
+               <!-- SLIDER -->
+               <section class="lg:pb-28 md:pb-20 pb-9">
+                    <div class="sl-container">
+                         <div class="swiper slider">
+                              <div class="swiper-wrapper">
+                                   <div class="swiper-slide"><img src="assets/img/image3.jpg" alt=""></div>
+                                   <div class="swiper-slide"><img src="assets/img/image4.jpg" alt=""></div>
+                                   <div class="swiper-slide"><img src="assets/img/image5.jpg" alt=""></div>
+                                   <div class="swiper-slide"><img src="assets/img/image6.jpg" alt=""></div>
+                                   <div class="swiper-slide"><img src="assets/img/image7.jpg" alt=""></div>
+                              </div>
+                         </div>
+                    </div>
+               </section>
+               <!-- SLIDER -->
+               <!-- INTRODUCTION -->
+               <section class="lg:pb-28 md:pb-20 pb-9">
+                    <div class="sl-container">
+                         <div class="flex flex-wrap items-center">
+                              <div class="md:w-1/2 sm:px-2 xl:pr-20 lg:pr-10 md:pr-5">
+                                   <video autoplay>
+                                        <source src="assets/video/3268705063528303961.mp4" type="video/mp4">
+                                        متصفحك الحالي لا يدعم تشغيل الفيديو.
+                                   </video>
+                              </div>
+                              <div class="md:w-1/2 sm:px-2">
+                                   <h2 class="font-bold md:text-3xl text-xl tracking-wider text-lime-400 mb-4">ChironTrend</h2>
+                                   <p class="relative bg-no-repeat bg-center bg-cover py-2 px-4 z-10 before:absolute before:inset-0 before:w-full before:h-full before:bg-black/70 before:-z-10" style="background-image: url(assets/img/IMG_0656.jpg);">إذا كسرت الشمعة الحالية خط ChironTrend فإنها تغلق فوق chironnael والشمعة الجديدة التي ينبغي أن تعطي الإشارة افتتاحها يكون أيضًا فوق chironnael للشراء
+                                        والعكس
                                         للبيع!
                                         <br>
                                         اكتشف مؤشرنا الجديد، ChironTrend! إنها أداة قوية تظهر كخط أخضر على الرسم البياني الخاص بك. مصممة للمتداولين والمستثمرين، تستخدم ChironNael خوارزميات متقدمة
                                         لمساعدتك على التنقل في الأسواق المالية. تم تصميم ChironTrend للتكيف مع ظروف السوق المتغيرة، وبالتالي توفير مرونة لا مثيل لها. سواء كنت متداولًا مبتدئًا أو
-                                        متمرسًا، يمكن لـ ChironNael مساعدتك على اتخاذ قرارات تداول أكثر استنارة. لا تنتظر أكثر من ذلك، أضف مؤشر ChironNael إلى منصة التداول الخاصة بك اليوم واكتشف الفرق
+                                        متمرسًا، يمكن لـ ChironNael مساعدتك على اتخاذ قرارات تداول أكثر استنارة. لا تنتظر أكثر من ذلك، أضف مؤشر ChironNael إلى منصة التداول الخاصة بك اليوم واكتشف
+                                        الفرق
                                         الذي يمكن أن يحدثه مؤشر الجودة الفائقة في تداولك!
                                         اكتشف مؤشرنا الجديد، ChironNael! هذه أداة قوية تظهر كخط أخضر على الرسم البياني الخاص بك. يستخدم ChironTrend المصمم للمتداولين والمستثمرين، خوارزميات متقدمة
                                         لمساعدتك على التنقل في الأسواق المالية.
                                         تم تصميم ChironTrend للتكيف مع ظروف السوق المتغيرة، مما يوفر مرونة لا مثيل لها. سواء كنت مبتدئًا أو متداولًا ذا خبرة، يمكن أن يساعدك ChironTrend على اتخاذ
                                         قرارات تداول أكثر استنارة.
-                                        لا تنتظر أكثر من ذلك، أضف مؤشر ChironTrend إلى منصة التداول الخاصة بك اليوم واكتشف الفرق الذي يمكن أن يحدثه مؤشر عالي الجودة في تداولك!
-                                   </p>
+                                        لا تنتظر أكثر من ذلك، أضف مؤشر ChironTrend إلى منصة التداول الخاصة بك اليوم واكتشف الفرق الذي يمكن أن يحدثه مؤشر عالي الجودة في تداولك!</p>
                               </div>
-                              <!-- <div>
-                                   <div :class="checked == 'fn' ? 'opacity-100 visible h-fit': 'opacity-0 invisible h-0'" class="space-y-2 transition-all duration-300 ease-out">
-                                        <p>RazakAllah EA est un Expert Advisor innovant qui utilise une stratégie de trading basée sur I'indicateur personnalisé “ChironNael". Il est congu pour maximiser
-                                             vos
-                                             profits tout en minimisant les risques grace a une série de fonctionnalités intelligentes.</p>
-                                        <p><span class="font-semibold">Détection de nouvelles barres :</span> RazakAllah EA est constamment a I'affGt de nouvelles opportunités de trading. Il commence
-                                             par
-                                             vérifier si une nouvelle barre a été formée sur le graphique et calcule la valeur de I'indicateur personnalisé “ChironNael".</p>
-                                        <p><span class="font-semibold">Logique d'ouverture des ordres :</span> Si aucune position n'est ouverte, RazakAllah EA utilise une logique de trading précise
-                                             pour
-                                             déterminer quand entrer sur le marché. Si certaines conditions sont remplies, une commande d'achat ou de vente est envoyée.</p>
-                                        <p><span class="font-semibold">Gestion des positions ouvertes :</span> RazakAllah EA gére activement toutes les positions ouvertes. Si la tendance change, toutes
-                                             les
-                                             commandes sont fermées et une nouvelle commande est envoyée dans la direction opposée.</p>
-                                        <p><span class="font-semibold">Stratégie de suivi des stops :</span> RazakAllah EA utilise une stratégie de suivi des stops pour protéger vos profits. Si
-                                             certaines
-                                             conditions sont remplies, le stop loss de l'ordre est ajusté.</p>
-                                        <p><span class="font-semibold">Fonction de cldture de toutes les commandes :</span> Enfin, RazakAllah EA est équipé d'une fonction qui ferme toutes les positions
-                                             ouvertes pour le symbole actuel.</p>
-                                        <p>Avec RazakAllah EA, vous pouvez trader en toute confiance, sachant que vous avez un outil puissant et flexible a votre disposition pour vous aider a naviguer
-                                             sur
-                                             les marchés financiers.</p>
-                                   </div>
-                                   <div :class="checked == 'en' ? 'opacity-100 visible h-fit': 'opacity-0 invisible h-0'" class="space-y-2 transition-all duration-300 ease-out">
-                                        <p>RazakAllah EA est un Expert Advisor innovant qui utilise une stratégie de trading basée sur I'indicateur personnalisé “ChironNael". Il est congu pour
-                                             maximiser
-                                             vos
-                                             profits tout en minimisant les risques grace a une série de fonctionnalités intelligentes.</p>
-                                        <p><span class="font-semibold">Detection of new bars :</span> Razakallah EA is constantly having fugst new trading opportunities. He starts by checking if
-                                             A new bar has been formed on the graph and calculates the value of the personalized “Chironnael” indicator.</p>
-                                        <p><span class="font-semibold">Order opening logic :</span> If no position is open, Razakallah EA uses a precise trading logic to determine
-                                             When to enter the market. If certain conditions are met, a purchase or sale order is sent.</p>
-                                        <p><span class="font-semibold">Management of open positions :</span> Razakallah EA actively manages all open positions. If the trend changes, all orders are
-                                             closed and a new order is sent in the opposite direction.</p>
-                                        <p><span class="font-semibold">Stop monitoring strategy :</span> Razakallah EA uses a Stop monitoring strategy to protect your profits. If certain
-                                             conditions are met, the stop loss of the order is adjusted.</p>
-                                        <p><span class="font-semibold">Cldture function of all orders :</span> finally, Razakallah EA is equipped with a function which closes all the open
-                                             positions for the current symbol.</p>
-                                        <p>With Razakallah EA, you can trade with confidence, knowing that you have a powerful and flexible tool at your disposal for you
-                                             Help navigate the financial markets.</p>
-                                   </div>
-                                   <div :class="checked == 'ae' ? 'opacity-100 visible h-fit': 'opacity-0 invisible h-0'" class="space-y-2 transition-all duration-300 ease-out">
-                                        <p>الوصف: Razakallah EA هو خبير استشاري مبتكر يستخدم استراتيجية تداول تعتمد على مؤشر "Chironnael" المخصص. إنه يُحكم عليه لزيادة أرباحك مع تقليل المخاطر بفضل سلسلة من الميزات الذكية.</p>
-                                        <p><span class="font-semibold">اكتشاف الحانات الجديدة:</span> Razakallah EA لديها باستمرار فرص تداول جديدة. يبدأ من خلال التحقق مما إذا كان قد تم تشكيل شريط جديد على الرسم البياني ويحسب قيمة مؤشر "Chironnael" المخصص.</p>
-                                        <p><span class="font-semibold">أوامر فتح المنطق:</span> إذا لم يكن هناك موقف مفتوح ، فإن Razakallah EA يستخدم منطقًا تجاريًا دقيقًا لتحديد عند إدخال السوق. إذا تم استيفاء شروط معينة ، يتم إرسال أمر شراء أو بيع.</p>
-                                        <p><span class="font-semibold">إدارة المنصب المفتوح:</span> Razakallah EA يدير بنشاط جميع المناصب المفتوحة. إذا تغير الاتجاه ، يتم إغلاق جميع الطلبات وإرسال طلب جديد في الاتجاه المعاكس.</p>
-                                        <p><span class="font-semibold">توقف عن استراتيجية المراقبة:</span> يستخدم Razakallah EA استراتيجية مراقبة التوقف لحماية أرباحك. إذا تم استيفاء شروط معينة ، يتم ضبط فقدان الطلب.</p>
-                                        <p><span class="font-semibold">وظيفة cldure لجميع الأوامر:</span> أخيرًا ، تم تجهيز Razakallah EA بوظيفة تغلق جميع المواضع المفتوحة للرمز الحالي.</p>
-                                        <p>مع Razakallah EA ، يمكنك التداول بثقة ، مع العلم أن لديك أداة قوية ومرنة تحت تصرفك لمساعدتك في التنقل في الأسواق المالية.</p>
-                                   </div>
-                              </div> -->
                          </div>
                     </div>
-               </div>
-          </section>
-          <!-- INTRODUCTION -->
+               </section>
+               <!-- INTRODUCTION -->
+          </div>
      </main>
      <!-- MAIN -->
 
